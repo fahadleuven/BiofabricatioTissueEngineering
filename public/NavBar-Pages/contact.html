@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo/icon.png">
+  <style>@view-transition { navigation: auto; }</style>
+  
+</head>
+<body>
+  <div class="page-wrapper"><!-- Scroll to Top Button -->
+   <div class="scroll-to-top" id="scrollToTop">
+    <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+   </div>
+   
+   <img src="/images/background/1.jpg" alt="Background" class="bg-image" />
+
+     <!-- Navigation -->
+   <nav class="nav-container bg-white shadow">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+
+      <!-- Logo + Group Name -->
+      <div class="flex items-center space-x-3">
+        <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+          <img src="../images/logo/l9.jpg"
+               alt="Group Logo"
+               class="w-full h-full object-contain scale-100" />
+        </div>
+        <span id="nav-group-name" class="text-xl font-bold text-gray-800">
+          Biofabrication and Tissue Engineering
+        </span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div id="desktop-menu" class="hidden md:flex space-x-6 items-center">
+
+        <a href="/" class="nav-link text-gray-700 hover:text-orange-600">Home</a>
+
+        <!-- Research -->
+        <div class="dropdown dropdown-down">
+          <a class="nav-link text-gray-700 hover:text-orange-600">
+            Research ▾
+          </a>
+
+          <div class="dropdown-menu">
+
+            <!-- Overview -->
+            <div class="dropdown dropdown-right">
+              <a href="/overview" class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+                Overview ▸
+              </a>
+
+              <div class="dropdown-menu">
+                <div id="research-dropdown"></div>
+              </div>
+            </div>
+
+            <a href="/lab"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Lab
+            </a>
+
+            <a href="/funding"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Funding
+            </a>
+
+          </div>
+        </div>
+
+        <!-- People -->
+        <div class="dropdown dropdown-down">
+          <a class="nav-link text-gray-700 hover:text-orange-600">
+            People ▾
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="/team"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Team
+            </a>
+
+            <a href="/collabrations"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Collaborations
+            </a>
+          </div>
+        </div>
+
+        <a href="/publication" class="nav-link text-gray-700 hover:text-orange-600">
+          Publications
+        </a>
+
+        <a href="/events" class="nav-link text-gray-700 hover:text-orange-600">
+          Events
+        </a>
+
+        <a href="/joinUs" class="nav-link text-gray-700 hover:text-orange-600">
+          Join Us
+        </a>
+
+        
+
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
+
+    <a href="/" class="block py-2 text-gray-700 hover:text-orange-600">Home</a>
+
+    <!-- Mobile Research -->
+    <button class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600">
+      Research ▾
+    </button>
+    <div class="hidden pl-4">
+       <button data-href="/overview" class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600" id="overview-btn">
+        Overview ▸
+      </button>
+     <div class="hidden pl-4" id="overview-menu">
+  <!-- Dynamic categories will load here -->
+</div>
+      <a href="/lab" class="block py-1">Lab</a>
+      <a href="/funding" class="block py-1">Funding</a>
+    </div>
+
+    <!-- Mobile People -->
+    <button class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600">
+      People ▾
+    </button>
+    <div class="hidden pl-4">
+      <a href="/team" class="block py-1">Team</a>
+      <a href="/collabrations" class="block py-1">Collaborations</a>
+    </div>
+
+    <a href="/publication" class="block py-2">Publications</a>
+    <a href="/events" class="block py-2">Events</a>
+    <a href="/joinUs" class="block py-2">Join Us</a>
+    
+  </div>
+</nav>
+
+
+   <!-- Contact Page -->
+   
+    <div class="max-w-7xl mx-auto px-6 py-16">
+     <div class="bg-white rounded-xl p-12 shadow-2xl">
+      <h1 class="text-4xl font-bold text-orange-700 mb-8">Contact Us</h1>
+      <p class="text-xl text-gray-600 mb-12">Get in touch with our research team.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+       <div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+        <div class="space-y-6">
+         <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><span class="text-2xl">📍</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-gray-800 mb-1">Address</h4>
+           <p class="text-gray-600">Andreas Vesaliusstraat 13 - box 2600
+
+<br>
+            3000 Leuven<br></p>
+          </div>
+         </div>
+         
+         <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"><span class="text-2xl">📞</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-gray-800 mb-1">Phone</h4>
+           <p class="text-gray-600">Tel: +32 16 32 21 10</p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
+        
+        <form
+  id="contact-form"
+  action="https://formspree.io/f/xgoraebe"
+  method="POST"
+  class="space-y-4"
+>
+  <div>
+    <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">
+      Name
+    </label>
+    <input
+      type="text"
+      id="contact-name"
+      name="name"
+      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none transition"
+      placeholder="Your name"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-2">
+      Email
+    </label>
+    <input
+      type="email"
+      id="contact-email"
+      name="email"
+      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none transition"
+      placeholder="your.email@example.com"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="contact-subject" class="block text-sm font-medium text-gray-700 mb-2">
+      Subject
+    </label>
+    <input
+      type="text"
+      id="contact-subject"
+      name="subject"
+      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none transition"
+      placeholder="Message subject"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-2">
+      Message
+    </label>
+    <textarea
+      id="contact-message"
+      name="message"
+      rows="4"
+      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none transition"
+      placeholder="Your message"
+      required
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-700 hover:to-red-700 transition"
+  >
+    Send Message
+  </button>
+
+  <div id="form-message" class="hidden mt-4 p-4 rounded-lg"></div>
+</form>
+
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+<div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase.js"></script>
+  <script>
+
+     document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const messageBox = document.getElementById("form-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+      });
+
+      if (response.ok) {
+     
+          
+       
+        messageBox.textContent =
+          "Thank you! Your message has been sent.";
+        messageBox.className =
+          "mt-4 p-4 rounded-lg bg-green-100 text-green-800";
+           
+        form.reset();
+        
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (err) {
+      messageBox.textContent =
+        "Oops! Something went wrong. Please try again.";
+      messageBox.className =
+        "mt-4 p-4 rounded-lg bg-red-100 text-red-800";
+    }
+
+    messageBox.classList.remove("hidden");
+    
+  });
+});
+
+async function loadNavbarCategories() {
+  const { data } = await supabaseClient
+    .from("research_categories")
+    .select("title, slug")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  const container = document.getElementById("research-dropdown");
+
+  data.forEach(cat => {
+    container.insertAdjacentHTML("beforeend", `
+      <a href="/research-category?slug=${cat.slug}"
+         class="dropdown-item">
+        ${cat.title}
+      </a>
+    `);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadNavbarCategories);
+
+
+async function loadMobileOverviewCategories() {
+
+  const { data, error } = await supabaseClient
+    .from("research_categories")
+    .select("title, slug")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  if (error) {
+    console.error("Mobile overview fetch error:", error);
+    return;
+  }
+
+  const overviewMenu = document.getElementById("overview-menu");
+  overviewMenu.innerHTML = "";
+
+  data.forEach(category => {
+    overviewMenu.insertAdjacentHTML("beforeend", `
+      <a href="/research-category?slug=${category.slug}"
+         class="block py-1 text-gray-700 hover:text-orange-600">
+        ${category.title}
+      </a>
+    `);
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  loadMobileOverviewCategories();
+});
+
+/* //fetch footer and insert into page */
+fetch('../components/footer.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+
+    </script>
+
+    <script src="/js/script.js"></script>
+    </body>
+</html>

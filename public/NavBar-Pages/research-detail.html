@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Details</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo/icon.png">
+  <style>@view-transition { navigation: auto; }</style>
+ 
+</head>
+<body>
+  <div class="page-wrapper"><!-- Scroll to Top Button -->
+   <div class="scroll-to-top" id="scrollToTop">
+    <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+   </div>
+   
+    <img src="/images/background/1.jpg" alt="Background" class="bg-image" />
+
+    <!-- Navigation -->
+    <nav class="nav-container bg-white shadow">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+
+      <!-- Logo + Group Name -->
+      <div class="flex items-center space-x-3">
+        <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+          <img src="../images/logo/l9.jpg"
+               alt="Group Logo"
+               class="w-full h-full object-contain scale-100" />
+        </div>
+        <span id="nav-group-name" class="text-xl font-bold text-gray-800">
+          Biofabrication and Tissue Engineering
+        </span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div id="desktop-menu" class="hidden md:flex space-x-6 items-center">
+
+        <a href="/" class="nav-link text-gray-700 hover:text-orange-600">Home</a>
+
+        <!-- Research -->
+        <div class="dropdown dropdown-down">
+          <a class="nav-link text-gray-700 hover:text-orange-600">
+            Research ▾
+          </a>
+
+          <div class="dropdown-menu">
+
+            <!-- Overview -->
+            <div class="dropdown dropdown-right">
+              <a href="/overview" class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+                Overview ▸
+              </a>
+
+              <div class="dropdown-menu">
+               <div id="research-dropdown"></div>
+                
+              </div>
+            </div>
+
+            <a href="/lab"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Lab
+            </a>
+
+            <a href="/funding"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Funding
+            </a>
+
+          </div>
+        </div>
+
+        <!-- People -->
+        <div class="dropdown dropdown-down">
+          <a class="nav-link text-gray-700 hover:text-orange-600">
+            People ▾
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="/team"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Team
+            </a>
+
+            <a href="/collabrations"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Collaborations
+            </a>
+          </div>
+        </div>
+
+        <a href="/publication" class="nav-link text-gray-700 hover:text-orange-600">
+          Publications
+        </a>
+
+        <a href="/events" class="nav-link text-gray-700 hover:text-orange-600">
+          Events
+        </a>
+
+        <a href="/joinUs" class="nav-link text-gray-700 hover:text-orange-600">
+          Join Us
+        </a>
+
+        
+
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
+
+    <a href="/" class="block py-2 text-gray-700 hover:text-orange-600">Home</a>
+
+    <!-- Mobile Research -->
+    <button class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600">
+      Research ▾
+    </button>
+    <div class="hidden pl-4">
+      <button data-href="/overview" class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600" id="overview-btn">
+        Overview ▸
+      </button>
+      <div class="hidden pl-4" id="overview-menu">
+  <!-- Dynamic categories will load here -->
+</div>
+
+      <a href="/lab" class="block py-1">Lab</a>
+      <a href="/funding" class="block py-1">Funding</a>
+    </div>
+
+    <!-- Mobile People -->
+    <button class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600">
+      People ▾
+    </button>
+    <div class="hidden pl-4">
+      <a href="/team" class="block py-1">Team</a>
+      <a href="/collabrations" class="block py-1">Collaborations</a>
+    </div>
+
+    <a href="/publication" class="block py-2">Publications</a>
+    <a href="/events" class="block py-2">Events</a>
+    <a href="/joinUs" class="block py-2">Join Us</a>
+    
+  </div>
+</nav>
+
+<div class="max-w-7xl mx-auto px-6 py-16">
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+     <!-- ---------------- CARD 1 : TEXT ---------------- -->
+      <div class="bg-white/20 backdrop-blur-lg p-8 rounded-xl shadow-lg border border-white/30 text-left">
+
+<h1 id="project-title"
+    class="text-3xl font-bold text-white mb-6"></h1>
+
+<div id="project-description"
+     class="text-purple-100 leading-relaxed text-lg space-y-6"></div>
+     <!-- Video container -->
+     <div id="video-caption" class="text-orange-100 leading-relaxed text-lg space-y-6"></div>
+<div id="project-video" class="w-full max-w-xl mt-4"></div>
+
+
+      </div>
+
+      <!-- ---------------- CARD 2 : SLIDER + INFO ---------------- -->
+
+<div class="bg-white/20 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-white/30">
+
+  <div class="slideshow-container relative" id="slider-container">
+    <!-- slides injected by JS -->
+    <a class="slide-prev">&#10094;</a>
+    <a class="slide-next">&#10095;</a>
+
+    <div class="indicators" id="slider-indicators"></div>
+  </div>
+
+
+
+
+<div class="space-y-3 mt-8">
+  <p id="project-supervision" class="text-white text-lg"></p>
+  <p id="project-phd" class="text-white text-lg"></p>
+  <p id="project-collaboration" class="text-white text-lg"></p>
+</div>
+
+<a href="/team"
+   class="mt-6 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition inline-block">
+  Get in touch with the team
+</a>
+</div>
+</div>
+</div>
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<script src="/js/supabase.js"></script>
+
+<script>
+
+function getSlug() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("slug");
+}
+
+
+async function loadResearchDetail() {
+  const slug = getSlug();
+
+  if (!slug) {
+    console.error("No project slug found in URL");
+    return;
+  }
+
+  
+  const { data: project, error } = await supabaseClient
+    .from("research_projects")
+    .select("*")
+    .eq("slug", slug)
+    .eq("active", true)
+    .maybeSingle();
+
+  if (error || !project) {
+    console.error("Project fetch error:", error);
+    return;
+  }
+
+  document.title = project.title;
+  document.querySelector("#project-title").textContent = project.title;
+  document.querySelector("#project-description").textContent =
+    project.description;
+
+
+    
+
+async function getStaffLink(name) {
+  if (!name) return null;
+
+  const { data, error } = await supabaseClient
+    .from("staff_profiles")
+    .select("slug")
+    .ilike("full_name", `%${name.trim()}%`);
+
+  if (error) {
+    console.error("Staff lookup error:", error);
+    return null;
+  }
+
+  if (data && data.length > 0) {
+    return `/profile?slug=${data[0].slug}`;
+  }
+
+  return null;
+}
+
+
+// ================= SUPERVISION RENDER =================
+
+const supervisionNames = project.supervision.split(",");
+const supervisionContainer = document.querySelector("#project-supervision");
+
+// Static label
+supervisionContainer.innerHTML = "<strong>Supervision:</strong> ";
+
+for (let i = 0; i < supervisionNames.length; i++) {
+  const raw = supervisionNames[i].trim();
+
+  // Extract role, title, and name
+  const match = raw.match(
+    /^(Promotor|Co-promotor|Postdoc)?\s*((?:Prof\.|Dr\.|Ir\.|Ing\.)\s*)*(.+)$/i
+
+  );
+
+  const role  = match?.[1] ? match[1] + " " : "";
+  const title = match?.[2] ? match[2] + " " : "";
+  const personName = match?.[3];
+
+  // Role (Promotor / Co-promotor) → static
+  if (role) {
+    const roleSpan = document.createElement("strong");
+    roleSpan.textContent = role;
+    supervisionContainer.appendChild(roleSpan);
+  }
+
+  // Title (Prof. / Dr. / Ir.) → static
+  if (title) {
+    const titleSpan = document.createElement("span");
+    titleSpan.textContent = title;
+    supervisionContainer.appendChild(titleSpan);
+  }
+
+  // Name → linked if found
+  const link = await getStaffLink(personName);
+
+  if (link) {
+    const a = document.createElement("a");
+    a.href = link;
+    a.className = "hover:text-orange-600 transition";
+    a.textContent = personName;
+    supervisionContainer.appendChild(a);
+  } else {
+    const span = document.createElement("span");
+    span.textContent = personName;
+    supervisionContainer.appendChild(span);
+  }
+
+  // Comma between entries
+  if (i < supervisionNames.length - 1) {
+    supervisionContainer.appendChild(document.createTextNode(", "));
+  }
+}
+
+// ================= PHD RENDER =================
+
+const phdContainer = document.querySelector("#project-phd");
+
+// Static label
+if (project.role=="phd") {
+phdContainer.innerHTML = "<strong>PhD student:</strong> ";
+} else {
+  phdContainer.innerHTML = "<strong>Postdoc:</strong> "
+};
+
+// Safety check
+if (!project.role_phd) {
+  phdContainer.appendChild(document.createTextNode("—"));
+  return;
+}
+
+// Extract title and name (Prof. / Dr. / Ir. /Ing.)
+const match = project.role_phd.trim().match(
+  /^(Prof\.|Dr\.|Ir\.|Ing.)?\s*(.+)$/i
+);
+
+const title = match?.[1] ? match[1] + " " : "";
+const personName = match?.[2];
+
+// Title → static
+if (title) {
+  const titleSpan = document.createElement("span");
+  titleSpan.textContent = title;
+  phdContainer.appendChild(titleSpan);
+}
+
+// Name → linked if found
+const link = await getStaffLink(personName);
+
+if (link) {
+  const a = document.createElement("a");
+  a.href = link;
+  a.className = "hover:text-orange-600 transition";
+  a.textContent = personName;
+  phdContainer.appendChild(a);
+} else {
+  const span = document.createElement("span");
+  span.textContent = personName;
+  phdContainer.appendChild(span);
+}
+
+
+
+
+
+
+
+
+ 
+const collaborationContainer = document.querySelector("#project-collaboration");
+if (!project.collaboration) {
+  collaborationContainer.style.display = "none";
+} else {
+  collaborationContainer.innerHTML =
+    `<strong>In collaboration with:</strong> ${project.collaboration}`;
+}
+
+    // ===== VIDEO SECTION =====
+const videoContainer = document.querySelector("#project-video");
+videoContainer.innerHTML = ""; // Clear previous content
+
+if (project.video_url) {
+  const videoEl = document.createElement("video");
+  videoEl.controls = true;
+  videoEl.className = "w-full rounded-lg shadow-lg";
+
+  const sourceEl = document.createElement("source");
+  sourceEl.src = project.video_url;
+  sourceEl.type = "video/mp4";
+
+  videoEl.appendChild(sourceEl);
+  videoContainer.appendChild(videoEl);
+} else {
+  // Optionally hide the container if no video
+  videoContainer.style.display = "none";
+}
+if (project.video_caption) {
+  const captionEl = document.createElement("video-caption");
+  captionEl.textContent = project.video_caption;
+  document.querySelector("#video-caption").appendChild(captionEl);
+} else {
+
+  document.querySelector("#video-caption").style.display = "none";
+}
+  // 3️⃣ Load slider images
+  loadResearchSlider(project.id);
+}
+
+// ===============================
+// LOAD SLIDER FROM DATABASE
+// ===============================
+async function loadResearchSlider(projectId) {
+  const container = document.getElementById("slider-container");
+  const indicators = document.getElementById("slider-indicators");
+
+  // Clear old slides
+  container.querySelectorAll(".slide").forEach(s => s.remove());
+  indicators.innerHTML = "";
+
+  const { data, error } = await supabaseClient
+    .from("research_images")
+    .select("img_url, caption")
+    .eq("project_id", projectId)
+    .order("sort_order", { ascending: false });
+
+  if (error) {
+    console.error("Slider DB error:", error);
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    console.warn("No slider images found");
+    toggleSliderControls(container, 0);
+    return;
+  }
+
+  // Create slides
+  data.forEach((row, index) => {
+    const slide = document.createElement("div");
+    slide.className = "slide fade";
+    slide.style.opacity = index === 0 ? "1" : "0";
+
+    const img = document.createElement("img");
+    img.src = row.img_url;
+    img.className = "slider-img fullscreen-enabled cursor-zoom-in";
+    slide.appendChild(img);
+
+    if (row.caption) {
+      const caption = document.createElement("div");
+      caption.className = "caption";
+      caption.textContent = row.caption;
+      slide.appendChild(caption);
+    }
+
+    container.insertBefore(slide, container.firstChild);
+
+    const indicator = document.createElement("span");
+    indicator.className = "indicator";
+    if (index === 0) indicator.classList.add("active");
+    indicators.appendChild(indicator);
+  });
+
+  //console.log("Slides loaded:", data.length);
+
+  // Hide arrows + dots if only one image
+  toggleSliderControls(container, data.length);
+
+  // Start slider ONLY if more than one image
+  if (data.length > 1) {
+    initSlider(container);
+  }
+}
+
+function toggleSliderControls(container, slideCount) {
+  const prev = container.querySelector(".slide-prev");
+  const next = container.querySelector(".slide-next");
+  const indicators = container.querySelector(".indicators");
+
+  if (slideCount <= 1) {
+    prev.style.display = "none";
+    next.style.display = "none";
+    indicators.style.display = "none";
+  } else {
+    prev.style.display = "";
+    next.style.display = "";
+    indicators.style.display = "";
+  }
+}
+
+
+
+// ===============================
+// INIT
+// ===============================
+document.addEventListener("DOMContentLoaded", loadResearchDetail);
+
+
+
+async function loadNavbarCategories() {
+  const { data } = await supabaseClient
+    .from("research_categories")
+    .select("title, slug")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  const container = document.getElementById("research-dropdown");
+
+  data.forEach(cat => {
+    container.insertAdjacentHTML("beforeend", `
+      <a href="/research-category?slug=${cat.slug}"
+         class="dropdown-item">
+        ${cat.title}
+      </a>
+    `);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadNavbarCategories);
+
+
+async function loadMobileOverviewCategories() {
+
+  const { data, error } = await supabaseClient
+    .from("research_categories")
+    .select("title, slug")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  if (error) {
+    console.error("Mobile overview fetch error:", error);
+    return;
+  }
+
+  const overviewMenu = document.getElementById("overview-menu");
+  overviewMenu.innerHTML = "";
+
+  data.forEach(category => {
+    overviewMenu.insertAdjacentHTML("beforeend", `
+      <a href="/research-category?slug=${category.slug}"
+         class="block py-1 text-gray-700 hover:text-orange-600">
+        ${category.title}
+      </a>
+    `);
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  loadMobileOverviewCategories();
+});
+
+
+/* //fetch footer and insert into page */
+fetch('../components/footer.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+
+</script>
+<script src="/js/script.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "smartgroup-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.2",
+    "axios": "^1.15.0",
+    "cheerio": "^1.2.0",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1"
+  }
+}

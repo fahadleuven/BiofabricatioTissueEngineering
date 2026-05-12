@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo/icon.png">
+  <style>@view-transition { navigation: auto; }</style>
+  
+</head>
+<body>
+  <div class="page-wrapper"><!-- Scroll to Top Button -->
+   <div class="scroll-to-top" id="scrollToTop">
+    <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+   </div>
+   
+   <img src="/images/background/1.jpg" alt="Background" class="bg-image" />
+
+     <!-- Navigation -->
+   <nav class="nav-container bg-white shadow">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+
+      <!-- Logo + Group Name -->
+      <div class="flex items-center space-x-3">
+        <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+          <img src="../images/logo/l9.jpg"
+               alt="Group Logo"
+               class="w-full h-full object-contain scale-100" />
+        </div>
+        <span id="nav-group-name" class="text-xl font-bold text-gray-800">
+          Biofabrication and Tissue Engineering
+        </span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div id="desktop-menu" class="hidden md:flex space-x-6 items-center">
+
+        <a href="/" class="nav-link text-gray-700 hover:text-orange-600">Home</a>
+
+        <!-- Research -->
+        <div class="dropdown dropdown-down">
+          <a class="nav-link text-gray-700 hover:text-orange-600">
+            Research ▾
+          </a>
+
+          <div class="dropdown-menu">
+
+            <!-- Overview -->
+            <div class="dropdown dropdown-right">
+              <a href="/overview" class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+                Overview ▸
+              </a>
+
+              <div class="dropdown-menu">
+                <div id="research-dropdown"></div>
+              </div>
+            </div>
+
+            <a href="/lab"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Lab
+            </a>
+
+            <a href="/funding"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Funding
+            </a>
+
+          </div>
+        </div>
+
+        <!-- People -->
+        <div class="dropdown dropdown-down">
+          <a class="nav-link text-gray-700 hover:text-orange-600">
+            People ▾
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="/team"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Team
+            </a>
+
+            <a href="/collabrations"
+               class="dropdown-item nav-link text-gray-700 hover:text-orange-600">
+              Collaborations
+            </a>
+          </div>
+        </div>
+
+        <a href="/publication" class="nav-link text-gray-700 hover:text-orange-600">
+          Publications
+        </a>
+
+        <a href="/events" class="nav-link text-gray-700 hover:text-orange-600">
+          Events
+        </a>
+
+        <a href="/joinUs" class="nav-link text-gray-700 hover:text-orange-600">
+          Join Us
+        </a>
+
+       
+
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
+
+    <a href="/" class="block py-2 text-gray-700 hover:text-orange-600">Home</a>
+
+    <!-- Mobile Research -->
+    <button class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600">
+      Research ▾
+    </button>
+    <div class="hidden pl-4">
+      <button data-href="/overview" class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600" id="overview-btn">
+        Overview ▸
+      </button>
+      <div class="hidden pl-4" id="overview-menu">
+  <!-- Dynamic categories will load here -->
+</div>
+      <a href="/lab" class="block py-1">Lab</a>
+      <a href="/funding" class="block py-1">Funding</a>
+    </div>
+
+    <!-- Mobile People -->
+    <button class="toggle-btn w-full text-left py-2 text-gray-700 hover:text-orange-600">
+      People ▾
+    </button>
+    <div class="hidden pl-4">
+      <a href="/team" class="block py-1">Team</a>
+      <a href="/collabrations" class="block py-1">Collaborations</a>
+    </div>
+
+    <a href="/publication" class="block py-2">Publications</a>
+    <a href="/events" class="block py-2">Events</a>
+    <a href="/joinUs" class="block py-2">Join Us</a>
+   
+  </div>
+</nav>
+
+<!-- Join Us Section -->
+<section class="relative z-10 py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-10 md:p-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-700 mb-6">
+        Join Us
+      </h1>
+
+      <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+        We welcome motivated students, researchers, and collaborators who are passionate about smart polymeric biomaterials, their development and processing in various additive manufacturing techniques. Join our group to work on cutting-edge research, interdisciplinary projects in an international team, and impactful scientific discoveries.
+      </p>
+
+      <!-- Benefits -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+        <div class="bg-orange-50 rounded-xl p-6 text-center">
+          <h3 class="text-xl font-semibold text-orange-700 mb-3">
+            Research Excellence
+          </h3>
+          <p class="text-gray-600">
+            Work on advanced biomaterials, nanotechnology, and biomedical
+            applications in a collaborative environment.
+          </p>
+        </div>
+
+        <div class="bg-orange-50 rounded-xl p-6 text-center">
+          <h3 class="text-xl font-semibold text-orange-700 mb-3">
+            Learning & Growth
+          </h3>
+          <p class="text-gray-600">
+            Gain hands-on experience, publish research, and develop strong
+            academic and professional skills.
+          </p>
+        </div>
+
+        <div class="bg-orange-50 rounded-xl p-6 text-center">
+          <h3 class="text-xl font-semibold text-orange-700 mb-3">
+            Global Collaboration
+          </h3>
+          <p class="text-gray-600">
+            Collaborate with national and international partners across
+            academia and industry.
+          </p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center">
+        <a
+          href="/contact"
+          class="inline-block px-10 py-4 bg-orange-600 text-white font-semibold rounded-lg shadow-lg hover:bg-orange-700 transition"
+        >
+          Apply / Contact Us
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase.js"></script>
+
+
+<script>
+async function loadNavbarCategories() {
+  const { data } = await supabaseClient
+    .from("research_categories")
+    .select("title, slug")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  const container = document.getElementById("research-dropdown");
+
+  data.forEach(cat => {
+    container.insertAdjacentHTML("beforeend", `
+      <a href="/research-category?slug=${cat.slug}"
+         class="dropdown-item">
+        ${cat.title}
+      </a>
+    `);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadNavbarCategories);
+
+
+async function loadMobileOverviewCategories() {
+
+  const { data, error } = await supabaseClient
+    .from("research_categories")
+    .select("title, slug")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  if (error) {
+    console.error("Mobile overview fetch error:", error);
+    return;
+  }
+
+  const overviewMenu = document.getElementById("overview-menu");
+  overviewMenu.innerHTML = "";
+
+  data.forEach(category => {
+    overviewMenu.insertAdjacentHTML("beforeend", `
+      <a href="/research-category?slug=${category.slug}"
+         class="block py-1 text-gray-700 hover:text-orange-600">
+        ${category.title}
+      </a>
+    `);
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  loadMobileOverviewCategories();
+});
+
+
+/* //fetch footer and insert into page */
+fetch('../components/footer.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+   <script src="/js/script.js"></script>
+
+   </body>
+</html>

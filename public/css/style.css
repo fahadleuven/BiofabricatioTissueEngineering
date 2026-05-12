@@ -1,0 +1,432 @@
+ body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full height */
+  
+}
+
+.bg-video {
+  position: fixed;    /* Make it stay behind */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Cover the screen */
+  z-index: -1;        /* Send behind content */
+}
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills screen like a video */
+  z-index: -1;         /* keeps it behind content */
+}
+
+.content {
+  position: relative;
+  z-index: 1;         /* Ensure content is above video */
+  color: white;       /* Text color on video */
+  padding: 20px;
+}
+
+/*
+    .page-wrapper {
+      width: 100%;
+      min-height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+*/
+/*
+.nav-container { background: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+   */
+   .nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  display: flex;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;  /* keeps background full height */
+ /*  height: 100px; */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+   
+  .nav-container .flex.items-center.justify-between {
+    flex-direction: column;
+    gap: 16px;
+     overflow:hidden;
+  }
+
+  .nav-container .flex.space-x-6 {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dropdown-menu {
+    position: static; /* fix dropdown issues on mobile */
+  }
+  .publication {
+    flex-direction: row;
+  }
+  
+ 
+}
+.nav-container .flex.items-center.justify-between {
+  gap: 40px;
+}
+
+
+
+
+    .nav-link {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      font-weight: 600;
+    }
+
+   /* =========================
+   BASE DROPDOWN
+   ========================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: white;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 1000;
+}
+
+/* =========================
+   DROP DOWN (Research)
+   ========================= */
+
+.dropdown-down > .dropdown-menu {
+  top: 100%;
+  left: 0;
+  transform: translateY(-8px);
+}
+
+.dropdown-down:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* =========================
+   DROP RIGHT (Overview)
+   ========================= */
+
+.dropdown-right > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 8px;
+  transform: translateX(-8px);
+}
+
+.dropdown-right:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+
+
+/* =========================
+   DROPDOWN ITEMS
+   ========================= */
+
+.dropdown-item {
+  display: block;
+  padding: 8px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  color: rgb(251, 115, 24);
+  background: rgba(128, 0, 128, 0.05);
+}
+
+
+
+
+
+
+
+    .content-section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+   /* .team-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+*/
+.team-card {
+  background: rgba(255, 255, 255, 0.2); /* transparent */
+  backdrop-filter: blur(10px);           /* frosted glass effect */
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+ width: 280px;
+    height: 500px;
+}
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .logo-container {
+  width: 120px;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;              /* 🔑 */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.4);         /* 🔥 zoom level */
+}
+
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #aea6a6 0%, #eb8f17 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+
+   .slideshow-container {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease; display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.slide img { width: 100%; height: calc(100% - 50px);  object-fit: contain; border-radius: 12px; }
+
+.slide-prev, .slide-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.slide-prev { left: 10px; }
+.slide-next { right: 10px; }
+
+.indicators {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.indicator.active {
+  background: white;
+}
+
+
+
+
+ .caption {
+  position: static;        /* remove absolute positioning */
+  width: auto;
+  height: 100px;         /* adjust height */
+  text-align: left;
+  margin-top: 6px;
+  padding: 4px 12px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+ 
+}
+
+.slideshow-container:has(.slide:only-child) {
+  cursor: default;
+}
+
+.slider-video {
+  max-height: 100%;
+
+}
+
+
+
+
+
+/* Fullscreen image style */
+.fullscreen-container {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+}
+
+.fullscreen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fullscreen-close {
+  position: fixed; /* 🔥 IMPORTANT */
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  color: white;
+  background: rgba(0,0,0,.5);
+  border: none;
+  cursor: pointer;
+  z-index: 9999; /* make sure above everything */
+  height: 50px;
+  width: 50px;
+}
+
+.fullscreen-close:hover {
+  color: #151414;
+  background: rgba(214, 10, 10, 0.956);
+}
+
+
+
+
+
+
+.read-more-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.read-more-section.expanded {
+  max-height: 5000px;
+}
+
+/* publication style */
+ .publication {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0rem;              /* gap-6 */
+  align-items: flex-start; /* items-start */
+  background-color: #faf5ff; /* bg-purple-50 */
+  padding: 0.5rem;         /* p-6 */
+  border-radius: 0.75rem;  /* rounded-xl */
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+    .title { font-weight: bold; font-size: 12px; }
+    .authors, .journal { margin-top: 4px; font-style: italic; font-size: 12px;}
+    .links a { margin-right: 10px; text-decoration: none; color: blue;font-size: 12px; }
+
+
+
+
