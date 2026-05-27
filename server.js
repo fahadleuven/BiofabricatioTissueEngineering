@@ -58,17 +58,15 @@ app.get("/team", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "NavBar-Pages", "team.html"));
 });
 
-app.get("/joinUs", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "NavBar-Pages", "joinUs.html"));
+app.get("/contactUs", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "NavBar-Pages", "contactUs.html"));
 });
 
 app.get("/collabrations", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "NavBar-Pages", "collabrations.html"));
 });
 
-app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "NavBar-Pages", "contact.html"));
-});
+
 
 app.get("/funding", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "NavBar-Pages", "funding.html"));
