@@ -193,7 +193,7 @@
     try {
       const res = await fetch('/api/publications');
       allPublications = await res.json();
-      renderPublications(allPublications);
+      renderPublications(allPublications.sort((a, b) => b.year - a.year));
     } catch (err) {
       console.error(err);
       document.getElementById('publications').textContent =
@@ -207,7 +207,7 @@
 
     list.forEach(pub => {
       const div = document.createElement('div');
-      div.classList.add('publication');
+      div.classList.add('publication')
 
       div.innerHTML = `
         <div class="title">${pub.title}</div>
