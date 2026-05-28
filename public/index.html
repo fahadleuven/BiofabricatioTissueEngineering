@@ -232,93 +232,7 @@
  <script src="/js/supabase.js"></script>
  <script>
   
-  /* async function loadSliderFromDB() {
-  const container = document.querySelector(".slideshow-container");
-  const indicators = container.querySelector(".indicators");
-
-  // Clear old slides
-  container.querySelectorAll(".slide").forEach(s => s.remove());
-  indicators.innerHTML = "";
-
-  // Fetch slider data
-  const { data, error } = await supabaseClient
-    .from("home_slider")
-    .select("file_name, img_url, media_type")
-    .order("id", { ascending: false });
-
-  if (error) {
-    console.error("DB error:", error);
-    return;
-  }
-
-  if (!data || data.length === 0) {
-    console.warn("No slider media found");
-    return;
-  }
-
-  data.forEach((row, index) => {
-    const slide = document.createElement("div");
-    slide.className = "slide fade";
-    slide.style.opacity = index === 0 ? "1" : "0";
-
-    // ======================
-    // IMAGE SLIDE
-    // ======================
-    if (row.media_type === "image") {
-      const img = document.createElement("img");
-      img.src = row.img_url;
-      img.alt = row.file_name ?? "";
-      img.className = "slider-img fullscreen-enabled";
-      slide.appendChild(img);
-    }
-
-    // ======================
-    // VIDEO SLIDE
-    // ======================
-    if (row.media_type === "video") {
-      const video = document.createElement("video");
-      video.src = row.img_url;
-      video.autoplay = true;      // ✅ autoplay
-  video.muted = true;         // ✅ required for autoplay
-  video.playsInline = true;   // ✅ mobile support
-  video.loop = false;         // optional
-  video.controls = false;      // optional (you can hide)
-      video.className = "slider-video w-full h-full object-contain rounded-lg";
-
-      // Pause slider autoplay when video plays
-      video.addEventListener("play", () => {
-        if (window.stopSliderAuto) window.stopSliderAuto();
-      });
-
-      video.addEventListener("ended", () => {
-        if (window.startSliderAuto) window.startSliderAuto();
-      });
-      
-
-      slide.appendChild(video);
-    }
-
-    container.insertBefore(slide, container.firstChild);
-
-    // Indicator
-    const indicator = document.createElement("span");
-    indicator.className = "indicator";
-    if (index === 0) indicator.classList.add("active");
-    indicators.appendChild(indicator);
-  });
-
- // console.log("Slides loaded:", data.length);
-
-  // Hide arrows + indicators if only one slide
-  if (data.length === 1) {
-    container.querySelector(".slide-prev")?.classList.add("hidden");
-    container.querySelector(".slide-next")?.classList.add("hidden");
-    indicators.classList.add("hidden");
-  }
-
-  // Start slider
-  initSlider(container);
-} */
+  
 //News Section Toggle and Rendering 
 /************************
  * FETCH NEWS FROM SUPABASE
@@ -506,7 +420,7 @@ fetch('components/footer.html')
           <h2 class="text-4xl font-semibold text-orange-700 mb-4 text-center">
             ${item.title}
           </h2>
-          <p class="text-white text-xl leading-relaxed">
+          <p class="text-white text-xl leading-relaxed [text-shadow:-1px_-1px_0_black,1px_-1px_0_black,-1px_1px_0_black,1px_1px_0_black]">
             ${item.description}
           </p>
           <div>
@@ -536,7 +450,7 @@ fetch('components/footer.html')
           <h2 class="text-4xl font-semibold text-orange-700 mb-4 text-center">
             ${item.title}
           </h2>
-          <p class="text-white text-xl leading-relaxed">
+          <p class="text-white text-xl leading-relaxed [text-shadow:-1px_-1px_0_black,1px_-1px_0_black,-1px_1px_0_black,1px_1px_0_black]">
             ${item.description}
           </p>
           <div>
