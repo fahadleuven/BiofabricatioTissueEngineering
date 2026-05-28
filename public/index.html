@@ -398,7 +398,7 @@ fetch('components/footer.html')
   async function loadHomeOverview() {
   const { data, error } = await supabaseClient
     .from("home_overview")
-    .select("*")
+    .select("*").order("id", { ascending: true });
     
     
 
